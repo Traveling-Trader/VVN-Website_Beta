@@ -5,19 +5,63 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Village V Network</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <section class="hero">
-        <h1>New beta website</h1>
-        
-        <div class="ip-container" onclick="copyIP()">
-            <span id="ip-text">mc.villagev.com</span>
+    <header>
+        <div class="header-left">
+            <div class="logo-placeholder">LOGO</div> 
+            
+            <nav>
+                <a href="#" class="active">HOME</a>
+                <a href="#">STORE</a>
+                <a href="#">BLOG</a>
+                <a href="#">FAQ</a>
+            </nav>
         </div>
-    </section>
+
+        <div class="social-icons">
+            <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="#" title="Discord"><i class="fab fa-discord"></i></a>
+            <a href="#" title="Bluesky"><i class="fa-solid fa-cloud"></i></a> <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" title="TikTok"><i class="fab fa-tiktok"></i></a>
+        </div>
+    </header>
+
+    <main>
+        <div class="hero-content">
+            <h1 class="server-title">Welcome to <span class="highlight">Village V Network</span></h1>
+            <p class="subtitle">Village of the future!</p>
+
+            <div class="server-info">
+                <h3>Server Information</h3>
+                <p><strong>Java Edition</strong></p>
+                
+                <div class="ip-box" onclick="copyIP()">
+                    <span id="ip-text">mc.villagev.com</span>
+                    <i class="fas fa-copy"></i>
+                </div>
+                
+                <p class="version">Server version: <span>1.21.9 – 1.21.11</span></p>
+                <p class="license">License: <span style="color: orange;">not required</span></p>
+            </div>
+
+            <div class="links-section">
+                <a href="#">Learn about server development from the blog</a>
+                <a href="#">Find out about the latest updates</a>
+                <a href="#">More information in the FAQ</a>
+            </div>
+        </div>
+    </main>
 
     <footer>
-        <p>&copy; 2026 Village V Network</p>
+        <p>Copyright &copy; Village V Network 2026. All rights reserved.</p>
+        <div class="footer-links">
+            <a href="#">Rules</a> | <a href="#">Privacy Policy</a>
+        </div>
+        <p style="font-size: 0.8rem; color: #yellow;">Not an official Minecraft product!</p>
     </footer>
 
     <script>
