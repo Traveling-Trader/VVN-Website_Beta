@@ -202,24 +202,81 @@ main {
    ========================================= */
 footer {
     background-color: #263238;
-    color: #cfd8dc;
-    text-align: center;
-    padding: 20px;
-    font-size: 0.9rem;
+    color: #b0bec5; /* Трохи світліший сірий для читабельності */
+    padding: 15px 20px; /* Зменшив відступи, щоб був компактнішим */
+    font-size: 0.8rem; /* Зменшений шрифт */
     margin-top: auto;
+    border-top: 3px solid #1f2d3d; /* Тонка лінія зверху для краси */
 }
 
-.footer-links {
-    margin: 10px 0;
+.footer-content {
+    display: flex;
+    justify-content: space-between; /* Розводить ліву і праву частину по краях */
+    align-items: center; /* Центрує їх по вертикалі */
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-footer a { 
-    color: #80cbc4; 
-    text-decoration: none; 
+/* Ліва частина (Текст) */
+.footer-left {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 2px; /* Мінімальна відстань між рядками тексту */
 }
 
-footer a:hover {
+.footer-left p {
+    margin: 0; /* Прибираємо зайві відступи */
+}
+
+.disclaimer {
+    color: #yellow; /* Жовтуватий відтінок, як попередження */
+    font-style: italic;
+    opacity: 0.8;
+}
+
+.site-version {
+    opacity: 0.5;
+    font-size: 0.75rem;
+}
+
+/* Права частина (Посилання) */
+.footer-right {
+    display: flex;
+    gap: 20px; /* Відстань між посиланнями */
+}
+
+.footer-right a {
+    color: #80cbc4;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.85rem;
+    transition: color 0.2s;
+    text-transform: uppercase; /* Робить літери великими автоматично */
+}
+
+.footer-right a:hover {
+    color: #fff;
     text-decoration: underline;
+}
+
+/* Адаптивність: на телефонах футер стає стовпчиком */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+
+    .footer-left {
+        text-align: center;
+        gap: 5px;
+    }
+
+    .footer-right {
+        flex-direction: column; /* Посилання теж у стовпчик на телефоні */
+        gap: 10px;
+    }
 }
 
 /* =========================================
