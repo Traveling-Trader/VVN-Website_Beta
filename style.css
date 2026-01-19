@@ -202,80 +202,82 @@ main {
    ========================================= */
 footer {
     background-color: #263238;
-    color: #b0bec5; /* Трохи світліший сірий для читабельності */
-    padding: 15px 20px; /* Зменшив відступи, щоб був компактнішим */
-    font-size: 0.8rem; /* Зменшений шрифт */
+    color: #cfd8dc; 
+    padding: 10px 20px; /* Дуже малі відступи зверху і знизу для тонкості */
+    font-size: 0.8rem;
     margin-top: auto;
-    border-top: 3px solid #1f2d3d; /* Тонка лінія зверху для краси */
+    border-top: 2px solid #1f2d3d;
 }
 
 .footer-content {
     display: flex;
-    justify-content: space-between; /* Розводить ліву і праву частину по краях */
-    align-items: center; /* Центрує їх по вертикалі */
+    justify-content: space-between; /* Розводить текст вліво, посилання вправо */
+    align-items: center; /* Вирівнює по центру висоти */
     max-width: 1200px;
     margin: 0 auto;
 }
 
-/* Ліва частина (Текст) */
+/* ЛІВА ЧАСТИНА */
 .footer-left {
-    text-align: left;
     display: flex;
     flex-direction: column;
-    gap: 2px; /* Мінімальна відстань між рядками тексту */
+    justify-content: center;
+    line-height: 1.3; /* Стискає рядки, щоб займали менше місця */
 }
 
 .footer-left p {
-    margin: 0; /* Прибираємо зайві відступи */
+    margin: 0; /* Прибираємо всі відступи між рядками */
 }
 
+/* Жовтий текст про Mojang */
 .disclaimer {
-    color: #yellow; /* Жовтуватий відтінок, як попередження */
-    font-style: italic;
-    opacity: 0.8;
-}
-
-.site-version {
-    opacity: 0.5;
+    color: #ffd600; /* Яскраво-жовтий */
+    font-weight: bold;
     font-size: 0.75rem;
 }
 
-/* Права частина (Посилання) */
+/* Версія сайту */
+.site-version {
+    opacity: 0.4;
+    font-size: 0.7rem;
+}
+
+/* ПРАВА ЧАСТИНА */
 .footer-right {
     display: flex;
-    gap: 20px; /* Відстань між посиланнями */
+    gap: 20px;
+    align-items: center;
 }
 
 .footer-right a {
     color: #80cbc4;
     text-decoration: none;
     font-weight: bold;
-    font-size: 0.85rem;
-    transition: color 0.2s;
-    text-transform: uppercase; /* Робить літери великими автоматично */
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    transition: opacity 0.2s;
 }
 
 .footer-right a:hover {
-    color: #fff;
+    opacity: 0.8;
     text-decoration: underline;
 }
 
-/* Адаптивність: на телефонах футер стає стовпчиком */
+/* АДАПТИВНІСТЬ */
 @media (max-width: 768px) {
     .footer-content {
-        flex-direction: column;
-        text-align: center;
+        flex-direction: column-reverse; /* На мобільному посилання будуть зверху */
         gap: 15px;
-    }
-
-    .footer-left {
         text-align: center;
-        gap: 5px;
     }
-
+    
+    .footer-left {
+        align-items: center;
+    }
+    
     .footer-right {
-        flex-direction: column; /* Посилання теж у стовпчик на телефоні */
-        gap: 10px;
+        flex-direction: column;
+        gap: 5px;
     }
 }
 
