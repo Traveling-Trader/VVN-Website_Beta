@@ -201,9 +201,9 @@ main {
    ФУТЕР (ПІДВАЛ)
    ========================================= */
 footer {
-    background-color: #263238;
+    background-color: #161619; /* Твій новий колір */
     color: #cfd8dc; 
-    padding: 10px 20px; /* Дуже малі відступи зверху і знизу для тонкості */
+    padding: 10px 20px;
     font-size: 0.8rem;
     margin-top: auto;
     border-top: 2px solid #1f2d3d;
