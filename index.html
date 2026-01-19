@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Village V Network</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <section class="hero">
+        <h1>New beta website</h1>
+        
+        <div class="ip-container" onclick="copyIP()">
+            <span id="ip-text">mc.villagev.com</span>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Village V Network</p>
+    </footer>
+
+    <script>
+        function copyIP() {
+            const ip = document.getElementById("ip-text").innerText;
+            navigator.clipboard.writeText(ip);
+            alert("IP скопійовано: " + ip);
+        }
+    </script>
+</body>
+</html>
