@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="uk">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -74,11 +74,24 @@
         </div>
     </footer>
 
-    <script>
+<script>
         function copyIP() {
-            const ip = document.getElementById("ip-text").innerText;
-            navigator.clipboard.writeText(ip);
-            alert("IP скопійовано: " + ip);
+            const ipTextElement = document.getElementById("ip-text");
+            const ip = "mc.villagev.com"; // Жорстко прописав IP, щоб точно копіювало правильно
+            
+            navigator.clipboard.writeText(ip).then(() => {
+                // Зберігаємо старий вигляд
+                const ipBox = document.querySelector('.ip-box');
+                const originalContent = ipBox.innerHTML;
+                
+                // Показуємо "COPIED!" на 1 секунду
+                ipBox.innerHTML = '<span style="color: #004d40;">COPIED!</span> <i class="fas fa-check" style="color: #004d40;"></i>';
+                
+                setTimeout(() => {
+                    ipBox.innerHTML = originalContent;
+                }, 1000);
+            }).catch(err => {
+            });
         }
     </script>
 </body>
