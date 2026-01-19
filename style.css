@@ -1,9 +1,44 @@
 /* =========================================
-   ОСНОВНІ НАЛАШТУВАННЯ
+   1. ПІДКЛЮЧЕННЯ ЛОКАЛЬНИХ ШРИФТІВ
+   ========================================= */
+
+/* Rubik (Для меню та футера) */
+@font-face {
+    font-family: 'Rubik';
+    src: url('fonts/rubik-v31-latin-regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Rubik';
+    src: url('fonts/rubik-v31-latin-700.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+
+/* Lexend (Для основного тексту) */
+/* Я підключив Regular (400) та Bold (700), які використовуються в дизайні */
+@font-face {
+    font-family: 'Lexend';
+    src: url('fonts/lexend-v26-latin-regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Lexend';
+    src: url('fonts/lexend-v26-latin-700.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+
+/* =========================================
+   2. ОСНОВНІ НАЛАШТУВАННЯ
    ========================================= */
 body {
     margin: 0;
-    font-family: 'Rubik', sans-serif;
+    font-family: 'Rubik', sans-serif; /* За замовчуванням Rubik */
     background-color: #00e5ff; /* Яскраво-блакитний фон */
     color: #333;
     display: flex;
@@ -12,10 +47,10 @@ body {
 }
 
 /* =========================================
-   ХЕДЕР (ВЕРХНЯ ПАНЕЛЬ)
+   3. ХЕДЕР (ВЕРХНЯ ПАНЕЛЬ)
    ========================================= */
 header {
-    background-color: #0E2D3B; /* Твій новий темний колір */
+    background-color: #0E2D3B; /* Темно-синій */
     color: white;
     padding: 0 20px;
     height: 60px;
@@ -33,7 +68,7 @@ header {
     gap: 20px;
 }
 
-/* Стиль для логотипу (якщо картинки немає) */
+/* Логотип */
 .logo-placeholder {
     width: 40px;
     height: 40px;
@@ -64,7 +99,7 @@ nav a:hover, nav a.active {
 }
 
 /* =========================================
-   СОЦІАЛЬНІ ІКОНКИ
+   4. СОЦІАЛЬНІ ІКОНКИ
    ========================================= */
 .social-icons {
     display: flex;
@@ -75,7 +110,7 @@ nav a:hover, nav a.active {
 .social-icons a {
     font-size: 22px;
     transition: transform 0.2s;
-    display: flex; /* Центрування іконки */
+    display: flex;
     align-items: center;
     justify-content: center;
     text-decoration: none;
@@ -85,22 +120,23 @@ nav a:hover, nav a.active {
     transform: scale(1.2);
 }
 
-/* Індивідуальні кольори соцмереж */
-.fa-youtube { color: #FF0000; }       /* YouTube - Червоний */
-.fa-discord { color: #5865F2; }       /* Discord - Синій */
-.fa-cloud { color: #0085ff; }         /* Bluesky - Блакитний */
-.fa-instagram { color: #ffa500; }     /* Instagram - Помаранчевий */
+/* Кольори брендів */
+.fa-youtube { color: #FF0000; }       /* YouTube */
+.fa-discord { color: #5865F2; }       /* Discord */
+.fa-cloud { color: #0085ff; }         /* Bluesky */
+.fa-instagram { color: #ffa500; }     /* Instagram */
 
-/* TikTok - Чорний з білою тінню (щоб видно було на темному фоні) */
+/* TikTok - Чорний з білою тінню */
 .fa-tiktok { 
     color: #000000; 
     filter: drop-shadow(0px 0px 1px #ffffff); 
 }
 
 /* =========================================
-   ОСНОВНИЙ КОНТЕНТ (HERO SECTION)
+   5. ОСНОВНИЙ КОНТЕНТ (Lexend)
    ========================================= */
 main {
+    font-family: 'Lexend', sans-serif; /* Вмикаємо Lexend */
     flex: 1;
     display: flex;
     justify-content: center;
@@ -122,7 +158,7 @@ main {
 }
 
 .highlight {
-    color: #d32f2f; /* Червоний акцент у назві */
+    color: #d32f2f; /* Червоний акцент */
 }
 
 .subtitle {
@@ -133,7 +169,7 @@ main {
     margin-bottom: 40px;
 }
 
-/* Блок з IP та інформацією */
+/* Блок IP */
 .server-info h3 {
     margin-bottom: 10px;
     color: #444;
@@ -152,7 +188,7 @@ main {
     color: #004d40;
     border: 2px solid rgba(0,0,0,0.1);
     transition: all 0.2s;
-    user-select: none; /* Щоб текст не виділявся при кліку */
+    user-select: none;
 }
 
 .ip-box:hover {
@@ -167,7 +203,7 @@ main {
 
 .version {
     font-weight: bold;
-    color: #fdd835; /* Жовтий для версії */
+    color: #fdd835; /* Жовтий */
     text-shadow: 1px 1px 0 rgba(0,0,0,0.2);
     font-size: 1.1rem;
     margin-top: 15px;
@@ -178,7 +214,7 @@ main {
     margin-top: 5px;
 }
 
-/* Нижні посилання (Блог, FAQ) */
+/* Посилання в центрі */
 .links-section {
     display: flex;
     flex-direction: column;
@@ -198,10 +234,10 @@ main {
 }
 
 /* =========================================
-   ФУТЕР (ПІДВАЛ)
+   6. ФУТЕР
    ========================================= */
 footer {
-    background-color: #161619; /* Твій новий колір */
+    background-color: #161619; /* Темний фон */
     color: #cfd8dc; 
     padding: 10px 20px;
     font-size: 0.8rem;
@@ -211,38 +247,37 @@ footer {
 
 .footer-content {
     display: flex;
-    justify-content: space-between; /* Розводить текст вліво, посилання вправо */
-    align-items: center; /* Вирівнює по центру висоти */
+    justify-content: space-between;
+    align-items: center;
     max-width: 1200px;
     margin: 0 auto;
 }
 
-/* ЛІВА ЧАСТИНА */
+/* Ліва частина */
 .footer-left {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    line-height: 1.3; /* Стискає рядки, щоб займали менше місця */
+    line-height: 1.3;
+    text-align: left;
 }
 
 .footer-left p {
-    margin: 0; /* Прибираємо всі відступи між рядками */
+    margin: 0;
 }
 
-/* Жовтий текст про Mojang */
 .disclaimer {
-    color: #ffd600; /* Яскраво-жовтий */
+    color: #ffd600; /* Жовте попередження */
     font-weight: bold;
     font-size: 0.75rem;
 }
 
-/* Версія сайту */
 .site-version {
     opacity: 0.4;
     font-size: 0.7rem;
 }
 
-/* ПРАВА ЧАСТИНА */
+/* Права частина */
 .footer-right {
     display: flex;
     gap: 20px;
@@ -263,26 +298,8 @@ footer {
     text-decoration: underline;
 }
 
-/* АДАПТИВНІСТЬ */
-@media (max-width: 768px) {
-    .footer-content {
-        flex-direction: column-reverse; /* На мобільному посилання будуть зверху */
-        gap: 15px;
-        text-align: center;
-    }
-    
-    .footer-left {
-        align-items: center;
-    }
-    
-    .footer-right {
-        flex-direction: column;
-        gap: 5px;
-    }
-}
-
 /* =========================================
-   АДАПТИВНІСТЬ (МОБІЛЬНІ)
+   7. АДАПТИВНІСТЬ
    ========================================= */
 @media (max-width: 768px) {
     header {
@@ -294,3 +311,39 @@ footer {
     
     .header-left {
         flex-direction: column;
+        width: 100%;
+        gap: 15px;
+    }
+    
+    nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 5px;
+    }
+
+    nav a {
+        font-size: 14px;
+        padding: 8px 10px;
+    }
+
+    .server-title {
+        font-size: 2rem;
+    }
+
+    .footer-content {
+        flex-direction: column-reverse;
+        gap: 15px;
+        text-align: center;
+    }
+    
+    .footer-left {
+        align-items: center;
+        text-align: center;
+    }
+    
+    .footer-right {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
