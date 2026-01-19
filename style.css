@@ -1,0 +1,51 @@
+body {
+    background-color: #121212;
+    color: #e0e0e0;
+    font-family: sans-serif;
+    margin: 0;
+    text-align: center;
+}
+
+header {
+    padding: 20px;
+    background: #1e1e1e;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 10%;
+}
+
+.logo { font-weight: bold; font-size: 1.5rem; color: #4CAF50; }
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: 500;
+}
+
+.hero {
+    padding: 100px 20px;
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://dummyimage.com/1920x1080/333/fff&text=Minecraft+Background');
+    background-size: cover;
+    background-position: center;
+}
+
+h1 { font-size: 3rem; margin-bottom: 10px; }
+
+.ip-container {
+    background: #4CAF50;
+    color: white;
+    display: inline-block;
+    padding: 15px 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: transform 0.2s;
+}
+
+.ip-container:hover { transform: scale(1.05); }
+.copy-hint { display: block; font-size: 0.8rem; opacity: 0.8; margin-top: 5px; }
+
+.content { padding: 50px 20px; max-width: 800px; margin: 0 auto; }
+footer { padding: 20px; background: #0a0a0a; color: #777; margin-top: 50px; }
