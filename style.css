@@ -1,24 +1,30 @@
-/* Основні налаштування */
+/* =========================================
+   ОСНОВНІ НАЛАШТУВАННЯ
+   ========================================= */
 body {
     margin: 0;
     font-family: 'Rubik', sans-serif;
-    background-color: #00e5ff; /* Яскраво-блакитний колір з твого скріну */
+    background-color: #00e5ff; /* Яскраво-блакитний фон */
     color: #333;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
 }
 
-/* Хедер (Верхня панель) */
+/* =========================================
+   ХЕДЕР (ВЕРХНЯ ПАНЕЛЬ)
+   ========================================= */
 header {
-    background-color: #1f2d3d; /* Темний колір, як на скетчі */
+    background-color: #0E2D3B; /* Твій новий темний колір */
     color: white;
     padding: 0 20px;
     height: 60px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    position: relative;
+    z-index: 10;
 }
 
 .header-left {
@@ -27,7 +33,7 @@ header {
     gap: 20px;
 }
 
-/* Логотип */
+/* Стиль для логотипу (якщо картинки немає) */
 .logo-placeholder {
     width: 40px;
     height: 40px;
@@ -40,7 +46,7 @@ header {
     border: 1px solid #666;
 }
 
-/* Навігація */
+/* Меню навігації */
 nav a {
     color: #e0e0e0;
     text-decoration: none;
@@ -49,31 +55,51 @@ nav a {
     font-size: 16px;
     padding: 10px 15px;
     transition: 0.3s;
+    border-radius: 4px;
 }
 
 nav a:hover, nav a.active {
-    background-color: #34495e;
+    background-color: rgba(255, 255, 255, 0.1);
     color: #fff;
 }
 
-/* Соціальні іконки */
+/* =========================================
+   СОЦІАЛЬНІ ІКОНКИ
+   ========================================= */
 .social-icons {
     display: flex;
     gap: 15px;
+    align-items: center;
 }
 
 .social-icons a {
-    color: #ff5252; /* Червонувато-оранжевий колір для іконок (як твій текст на скетчі) */
-    font-size: 20px;
-    transition: transform 0.2s, color 0.2s;
+    font-size: 22px;
+    transition: transform 0.2s;
+    display: flex; /* Центрування іконки */
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
 }
 
 .social-icons a:hover {
     transform: scale(1.2);
-    color: #fff;
 }
 
-/* Основний контент */
+/* Індивідуальні кольори соцмереж */
+.fa-youtube { color: #FF0000; }       /* YouTube - Червоний */
+.fa-discord { color: #5865F2; }       /* Discord - Синій */
+.fa-cloud { color: #0085ff; }         /* Bluesky - Блакитний */
+.fa-instagram { color: #ffa500; }     /* Instagram - Помаранчевий */
+
+/* TikTok - Чорний з білою тінню (щоб видно було на темному фоні) */
+.fa-tiktok { 
+    color: #000000; 
+    filter: drop-shadow(0px 0px 1px #ffffff); 
+}
+
+/* =========================================
+   ОСНОВНИЙ КОНТЕНТ (HERO SECTION)
+   ========================================= */
 main {
     flex: 1;
     display: flex;
@@ -92,10 +118,11 @@ main {
     font-size: 3rem;
     margin-bottom: 5px;
     color: #333;
+    font-weight: 700;
 }
 
 .highlight {
-    color: #d32f2f; /* Червоний колір назви */
+    color: #d32f2f; /* Червоний акцент у назві */
 }
 
 .subtitle {
@@ -103,65 +130,101 @@ main {
     color: #555;
     font-style: italic;
     margin-top: 0;
+    margin-bottom: 40px;
 }
 
-/* Блок інформації про сервер */
-.server-info {
-    margin: 40px 0;
+/* Блок з IP та інформацією */
+.server-info h3 {
+    margin-bottom: 10px;
+    color: #444;
 }
 
 .ip-box {
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    background: rgba(255, 255, 255, 0.3);
-    padding: 10px 20px;
+    background: rgba(255, 255, 255, 0.4);
+    padding: 12px 25px;
     border-radius: 8px;
     cursor: pointer;
     font-size: 1.5rem;
     font-weight: bold;
     color: #004d40;
     border: 2px solid rgba(0,0,0,0.1);
-    transition: 0.2s;
+    transition: all 0.2s;
+    user-select: none; /* Щоб текст не виділявся при кліку */
 }
 
 .ip-box:hover {
-    background: rgba(255, 255, 255, 0.6);
-    transform: scale(1.02);
+    background: rgba(255, 255, 255, 0.8);
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.ip-box:active {
+    transform: scale(0.98);
 }
 
 .version {
     font-weight: bold;
-    color: #ffd600; /* Жовтий колір для версії */
-    text-shadow: 1px 1px 0 #333;
+    color: #fdd835; /* Жовтий для версії */
+    text-shadow: 1px 1px 0 rgba(0,0,0,0.2);
+    font-size: 1.1rem;
+    margin-top: 15px;
 }
 
-/* Лінки внизу */
+.license {
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+/* Нижні посилання (Блог, FAQ) */
 .links-section {
     display: flex;
     flex-direction: column;
-    gap: 15px;
-    margin-top: 50px;
+    gap: 10px;
+    margin-top: 60px;
 }
 
 .links-section a {
-    color: #00695c;
+    color: #006064;
     text-decoration: underline;
     font-size: 1.1rem;
+    transition: color 0.2s;
 }
 
-/* Футер */
+.links-section a:hover {
+    color: #00838f;
+}
+
+/* =========================================
+   ФУТЕР (ПІДВАЛ)
+   ========================================= */
 footer {
     background-color: #263238;
-    color: white;
+    color: #cfd8dc;
     text-align: center;
     padding: 20px;
     font-size: 0.9rem;
+    margin-top: auto;
 }
 
-footer a { color: #80cbc4; text-decoration: none; }
+.footer-links {
+    margin: 10px 0;
+}
 
-/* Адаптивність для телефонів */
+footer a { 
+    color: #80cbc4; 
+    text-decoration: none; 
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* =========================================
+   АДАПТИВНІСТЬ (МОБІЛЬНІ)
+   ========================================= */
 @media (max-width: 768px) {
     header {
         flex-direction: column;
@@ -172,12 +235,3 @@ footer a { color: #80cbc4; text-decoration: none; }
     
     .header-left {
         flex-direction: column;
-        width: 100%;
-    }
-    
-    nav {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-}
