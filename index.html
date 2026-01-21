@@ -21,26 +21,7 @@
 </head>
 <body>
 
-    <header>
-        <div class="header-left">
-            <img src="logo.png" alt="Village V Network Logo" style="height: 40px; width: 40px;">
-            
-            <nav>
-                <a href="index.html" class="active">HOME</a>
-                <a href="https://store.villagev.com">STORE</a>
-                <a href="#">BLOG</a>
-                <a href="#">FAQ</a>
-            </nav>
-        </div>
-
-        <div class="social-icons">
-            <a href="https://youtube.villagev.com/" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
-            <a href="https://discord.villagev.com/" target="_blank" title="Discord"><i class="fab fa-discord"></i></a>
-            <a href="https://bluesky.villagev.com/" target="_blank" title="Bluesky"><i class="fa-solid fa-cloud"></i></a>
-            <a href="https://instagram.villagev.com/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="https://tiktok.villagev.com/" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
-        </div>
-    </header>
+    <header id="global-header"></header>
 
 <main>
         <div class="content-wrapper">
@@ -103,9 +84,9 @@
             </div>
 
             <div class="footer-right">
-                <a href="#">RULES</a>
-                <a href="#">TERMS OF SERVICE</a>
-                <a href="#">PRIVACY POLICY</a>
+                <a href="rules.html">RULES</a>
+                <a href="terms_of_service.html">TERMS OF SERVICE</a>
+                <a href="privacy_policy.html">PRIVACY POLICY</a>
             </div>
         </div>
     </footer>
@@ -113,14 +94,12 @@
 <script>
         function copyIP() {
             const ipTextElement = document.getElementById("ip-text");
-            const ip = "mc.villagev.com"; // Жорстко прописав IP, щоб точно копіювало правильно
+            const ip = "mc.villagev.com";
             
             navigator.clipboard.writeText(ip).then(() => {
-                // Зберігаємо старий вигляд
                 const ipBox = document.querySelector('.ip-box');
                 const originalContent = ipBox.innerHTML;
                 
-                // Показуємо "COPIED!" на 1 секунду
                 ipBox.innerHTML = '<span style="color: #004d40;">COPIED!</span> <i class="fas fa-check" style="color: #004d40;"></i>';
                 
                 setTimeout(() => {
