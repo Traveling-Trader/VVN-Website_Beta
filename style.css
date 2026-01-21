@@ -133,104 +133,145 @@ nav a:hover, nav a.active {
 }
 
 /* =========================================
-   5. ОСНОВНИЙ КОНТЕНТ (Lexend)
+   5. ОСНОВНИЙ КОНТЕНТ (ОНОВЛЕНО)
    ========================================= */
 main {
-    font-family: 'Lexend', sans-serif; /* Вмикаємо Lexend */
+    font-family: 'Lexend', sans-serif;
     flex: 1;
+    display: flex; /* Вмикаємо Flexbox */
+    justify-content: center; /* Центруємо загальний блок по горизонталі */
+    padding: 60px 20px;
+    align-items: flex-start; /* Вирівнюємо колонки по верху */
+}
+
+/* Обгортка для двох колонок */
+.content-wrapper {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 40px 20px;
-}
-
-.hero-content {
-    max-width: 800px;
+    max-width: 1200px;
     width: 100%;
+    gap: 40px; /* Відстань між лівою і правою частиною */
+    align-items: flex-start; /* Щоб колонки не розтягувались на всю висоту */
 }
 
-.server-title {
-    font-size: 3rem;
-    margin-bottom: 5px;
-    color: #333;
-    font-weight: 700;
+/* --- ЛІВА КОЛОНКА (HERO) --- */
+.hero-column {
+    flex: 1.2; /* Ліва частина трохи ширша (60%) */
+    text-align: center; /* Текст всередині по центру */
+    padding-top: 20px;
 }
 
-.highlight {
-    color: #d32f2f; /* Червоний акцент */
-}
-
-.subtitle {
-    font-size: 1.5rem;
-    color: #555;
-    font-style: italic;
-    margin-top: 0;
-    margin-bottom: 40px;
-}
-
-/* Блок IP */
-.server-info h3 {
-    margin-bottom: 10px;
-    color: #444;
-}
-
-.ip-box {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    background: rgba(255, 255, 255, 0.4);
-    padding: 12px 25px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #004d40;
-    border: 2px solid rgba(0,0,0,0.1);
-    transition: all 0.2s;
-    user-select: none;
-}
-
-.ip-box:hover {
-    background: rgba(255, 255, 255, 0.8);
-    transform: scale(1.05);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-}
-
-.ip-box:active {
-    transform: scale(0.98);
-}
-
-.version {
-    font-weight: bold;
-    color: #fdd835; /* Жовтий */
-    text-shadow: 1px 1px 0 rgba(0,0,0,0.2);
-    font-size: 1.1rem;
-    margin-top: 15px;
-}
-
-.license {
-    font-weight: bold;
-    margin-top: 5px;
-}
-
-/* Посилання в центрі */
-.links-section {
+/* --- ПРАВА КОЛОНКА (САЙДБАР) --- */
+.info-column {
+    flex: 1; /* Права частина трохи вужча (40%) */
     display: flex;
     flex-direction: column;
+    gap: 30px; /* Відстань між картками Новин і Оновлень */
+}
+
+/* Стиль карток (News & Updates) */
+.info-card {
+    background: rgba(0, 0, 0, 0.2); /* Напівпрозорий темний фон */
+    border-radius: 12px;
+    padding: 25px;
+    text-align: left;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+}
+
+.info-card:hover {
+    transform: translateY(-5px); /* Легке підняття при наведенні */
+    background: rgba(0, 0, 0, 0.25);
+}
+
+/* Заголовки карток */
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+.card-header h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #fff;
+    text-transform: uppercase;
+    font-family: 'Rubik', sans-serif; /* Заголовки рубіком для стилю */
+}
+
+.date {
+    background: #0E2D3B;
+    color: #00e5ff;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+/* Текст всередині карток */
+.card-content h3 {
+    margin: 0 0 10px 0;
+    color: #ffd600; /* Жовтий заголовок новини */
+}
+
+.card-content p {
+    color: #e0f7fa;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+/* Список змін (Update Log) */
+.changelog {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 15px 0;
+}
+
+.changelog li {
+    margin-bottom: 8px;
+    color: #e0f7fa;
+    display: flex;
+    align-items: center;
     gap: 10px;
-    margin-top: 60px;
 }
 
-.links-section a {
-    color: #006064;
+.changelog li i {
+    font-size: 0.8rem;
+    opacity: 0.7;
+}
+
+/* Кнопка "Читати далі" */
+.read-more {
+    display: inline-block;
+    color: #80cbc4;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.read-more:hover {
     text-decoration: underline;
-    font-size: 1.1rem;
-    transition: color 0.2s;
+    color: #fff;
 }
 
-.links-section a:hover {
-    color: #00838f;
+/* --- АДАПТИВНІСТЬ --- */
+@media (max-width: 900px) {
+    .content-wrapper {
+        flex-direction: column; /* На планшетах і телефонах ставимо в стовпчик */
+        align-items: center;
+    }
+
+    .hero-column, .info-column {
+        width: 100%; /* На мобільному займають всю ширину */
+        text-align: center;
+    }
+    
+    .info-card {
+        text-align: left; /* Текст в картках залишаємо зліва */
+    }
 }
 
 /* =========================================
