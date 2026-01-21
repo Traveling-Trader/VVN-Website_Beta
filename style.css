@@ -388,3 +388,37 @@ footer {
         gap: 10px;
     }
 }
+
+/* =========================================
+   8. СТИЛІ ТЕКСТОВИХ СТОРІНОК (Rules, Privacy, Terms)
+   ========================================= */
+.text-page-container {
+    max-width: 900px;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95); /* Майже білий фон для читабельності */
+    padding: 50px;
+    border-radius: 8px;
+    text-align: left; /* Текст вирівнюємо зліва, так зручніше читати */
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.text-page-container h1 {
+    color: #434343; /* Твій колір заголовка (темно-сірий) */
+    font-family: 'Rubik', sans-serif;
+    text-transform: uppercase;
+    font-size: 2.5rem;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 15px;
+    margin-top: 0;
+    margin-bottom: 25px;
+}
+
+/* Колір основного тексту */
+.text-page-container p, 
+.text-page-container li, 
+.text-page-container div {
+    color: #4e733c; /* Твій колір тексту (темно-зелений) */
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
