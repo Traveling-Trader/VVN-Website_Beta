@@ -340,46 +340,63 @@ footer {
 }
 
 /* =========================================
-   7. АДАПТИВНІСТЬ
+   7. АДАПТИВНІСТЬ (МОБІЛЬНІ) - ОНОВЛЕНО
    ========================================= */
 @media (max-width: 768px) {
     header {
-        flex-direction: column;
+        flex-direction: column; /* Залишаємо колонку: зверху (Лого+Меню), знизу Соцмережі */
         height: auto;
-        padding: 15px;
-        gap: 15px;
+        padding: 10px 15px;
+        gap: 10px;
     }
     
     .header-left {
-        flex-direction: column;
+        flex-direction: row; /* ВАЖЛИВО: Ставимо Лого і Меню в один рядок */
         width: 100%;
-        gap: 15px;
+        justify-content: center; /* Центруємо їх разом */
+        align-items: center;     /* Вирівнюємо по висоті */
+        gap: 15px;               /* Відступ між Логотипом і Меню */
     }
     
+    /* Налаштування меню, щоб влазило */
     nav {
         display: flex;
-        flex-wrap: wrap;
+        flex-wrap: nowrap; /* Забороняємо перенос слів, щоб тримало рядок */
         justify-content: center;
-        gap: 5px;
+        gap: 2px; /* Мінімальний відступ між кнопками */
     }
 
     nav a {
-        font-size: 14px;
-        padding: 8px 10px;
+        font-size: 13px; /* Зменшуємо шрифт, щоб все влізло */
+        padding: 6px 8px; /* Зменшуємо кнопки */
     }
 
+    /* Соцмережі залишаються знизу */
+    .social-icons {
+        margin-top: 5px;
+    }
+    
     .server-title {
         font-size: 2rem;
+    }
+
+    .content-wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero-column, .info-column {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .info-card {
+        text-align: left;
     }
 
     .footer-content {
         flex-direction: column-reverse;
         gap: 15px;
-        text-align: center;
-    }
-    
-    .footer-left {
-        align-items: center;
         text-align: center;
     }
     
