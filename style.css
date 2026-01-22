@@ -455,7 +455,6 @@ footer {
     color: #434343; /* Твій темно-сірий */
     font-size: 1.8rem;
     margin-bottom: 5px;
-    border-bottom: 2px solid #80cbc4; /* Зелена лінія під заголовком */
     padding-bottom: 5px;
     display: inline-block;
 }
