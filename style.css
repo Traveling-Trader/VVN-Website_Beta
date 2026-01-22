@@ -412,7 +412,7 @@ footer {
 .text-page-container {
     max-width: 1200px;
     width: 100%;
-    background: rgba(255, 255, 255, 0.95); /* Майже білий фон для читабельності */
+    background: #999999;
     padding: 50px;
     border-radius: 8px;
     text-align: left; /* Текст вирівнюємо зліва, так зручніше читати */
