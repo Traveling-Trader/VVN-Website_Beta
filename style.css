@@ -441,69 +441,76 @@ footer {
 }
 
 /* =========================================
-   9. СТИЛІ ДЛЯ ПРАВИЛ (СТАТИЧНИЙ СПИСОК)
+   9. СТИЛІ ДЛЯ ПРАВИЛ (ФІНАЛЬНІ)
    ========================================= */
 
-/* Загальний контейнер для розділів */
-.rules-section {
-    margin-bottom: 50px; /* Відступ між великими розділами (1, 2, 3...) */
+/* Заголовок сторінки (RULES) - тепер окремо над блоком */
+.page-main-title {
+    text-align: center;
+    font-family: 'Rubik', sans-serif;
+    font-size: 30px;       /* Твій розмір */
+    color: #000000;        /* Чорний колір */
+    margin-bottom: 20px;   /* Відступ до сірого блоку */
+    text-transform: uppercase;
 }
 
-/* Заголовок розділу (напр. 1)Account rules) */
-.rules-section h2 {
+/* Сірий блок (Контейнер) */
+.text-page-container {
+    max-width: 1200px;
+    width: 100%;
+    background: #999999;   /* Сірий фон */
+    padding: 50px;
+    border-radius: 8px;
+    text-align: left;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    margin: 0 auto;        /* Центрування блоку */
+}
+
+/* Загальний текст (p) та елементи списку (li) */
+.text-page-container p,
+.rules-list li,
+.section-subtitle,
+.rules-intro {
+    color: #4e733c;        /* Твій зелений колір */
+    font-size: 16px;       /* Твій розмір */
+    line-height: 1.5;
+}
+
+/* Заголовки розділів (напр. 1)Account rules) */
+.rules-section h2, 
+.mode-title {
     font-family: 'Rubik', sans-serif;
-    color: #434343; /* Твій темно-сірий */
-    font-size: 1.8rem;
-    margin-bottom: 5px;
-    padding-bottom: 5px;
+    color: #434343;        /* Темно-сірий */
+    font-size: 24px;       /* Твій розмір */
+    margin-bottom: 10px;
+    padding-bottom: 0;
+    border-bottom: none;   /* Смужки прибрали */
     display: inline-block;
 }
 
-/* Підзаголовок (сірий опис під назвою) */
+/* Підзаголовок (курсив під назвою розділу) */
 .section-subtitle {
     display: block;
-    font-size: 1rem;
-    color: #4e733c; /* Твій зелений */
-    opacity: 0.8;
     margin-bottom: 20px;
     font-style: italic;
+    opacity: 0.9;
 }
 
-/* Список правил */
-.rules-list {
-    list-style: none; /* Без стандартних точок */
-    padding: 0;
-}
-
+/* Відступи між правилами */
 .rules-list li {
     margin-bottom: 12px;
-    color: #4e733c; /* Твій зелений текст */
-    font-size: 1.1rem;
-    line-height: 1.5;
     padding-left: 10px;
 }
 
-/* Жирний номер правила (1.1, 1.2...) */
+/* Жирні номери (1.1, 1.2) */
 .rule-id {
     font-weight: bold;
-    color: #2e4a2d; /* Темніший відтінок для номера */
+    color: #2e4a2d; /* Трохи темніший для контрасту, або можеш змінити на #4e733c */
     margin-right: 5px;
 }
 
-/* Підзаголовки для режиів (Anarchy, Grief...) */
-.mode-title {
-    color: #434343;
-    font-size: 1.4rem;
-    margin-top: 25px;
-    margin-bottom: 10px;
-    font-family: 'Rubik', sans-serif;
-}
-
 /* Низ сторінки */
-.rules-footer-info {
-    margin-top: 60px;
-    padding-top: 20px;
-    border-top: 1px solid #ccc;
-    font-size: 0.9rem;
+.rules-footer-info p {
+    font-size: 14px; /* Тут можна трохи менше, або теж 16px */
     color: #4e733c;
 }
