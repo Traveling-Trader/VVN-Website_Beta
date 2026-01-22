@@ -1,3 +1,15 @@
+// Автоматичне прибирання .html з адреси
+(function() {
+    // Якщо адреса закінчується на .html
+    if (window.location.pathname.endsWith('.html')) {
+        // Створюємо нову адресу без розширення
+        var newUrl = window.location.pathname.replace('.html', '');
+        
+        // Миттєво підміняємо адресу в браузері без перезавантаження
+        window.history.replaceState(null, null, newUrl);
+    }
+})();
+
 // Функція для завантаження HTML частин
 async function loadComponent(id, file) {
     try {
