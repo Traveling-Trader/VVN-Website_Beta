@@ -407,50 +407,63 @@ footer {
 }
 
 /* =========================================
-   8. СТИЛІ ТЕКСТОВИХ СТОРІНОК (Без прямокутника)
+   8. СТИЛІ ТЕКСТОВИХ СТОРІНОК (RULES, PRIVACY...)
    ========================================= */
 .text-page-container {
-    max-width: 900px;
+    max-width: 1000px;       /* Обмежуємо ширину, щоб текст не розтягувався занадто сильно */
     width: 100%;
-    background: transparent; /* Прозорий фон */
+    background: transparent; /* Прибираємо сірий фон */
     box-shadow: none;        /* Прибираємо тінь */
-    padding: 20px 0;         /* Відступи тільки зверху і знизу */
-    margin: 0 auto;          /* Центрування блоку */
-    text-align: left;        /* Текст зліва */
+    padding: 0 20px;         /* Відступи з боків, щоб на телефоні текст не торкався країв */
+    margin: 40px auto;       /* Центруємо весь блок по середині екрану */
+    text-align: left;        /* Основний текст вирівнюємо зліва */
 }
 
+/* ЗАГОЛОВОК СТОРІНКИ (RULES) - 30px */
 .text-page-container h1 {
     color: #434343;
     font-family: 'Rubik', sans-serif;
     text-transform: uppercase;
-    font-size: 2.5rem;
-    border-bottom: 2px solid rgba(0,0,0,0.1); /* Тонка лінія під заголовком */
-    padding-bottom: 15px;
+    font-size: 30px;         /* Твій розмір */
+    font-weight: 700;
+    text-align: center;      /* Строго по центру */
     margin-top: 0;
-    margin-bottom: 25px;
-    text-align: center;      /* Заголовок по центру */
+    margin-bottom: 40px;     /* Відступ від заголовка до тексту */
+    border: none;            /* Прибрав лінію підкреслення (якщо треба - повернемо) */
 }
 
-/* Колір основного тексту */
+/* ЗАГОЛОВКИ РОЗДІЛІВ (1. Account rules) - 24px */
+/* Важливо: у HTML використовуй тег <h2> для цих заголовків */
+.text-page-container h2 {
+    color: #434343;          /* Темний колір для заголовків розділів */
+    font-family: 'Rubik', sans-serif;
+    font-size: 24px;         /* Твій розмір */
+    font-weight: 700;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+/* ОСНОВНИЙ ТЕКСТ - 18px */
 .text-page-container p, 
 .text-page-container li, 
+.text-page-container ul,
 .text-page-container div {
-    color: #4e733c;          /* Твій темно-зелений колір */
-    font-size: 1.1rem;
-    line-height: 1.6;
+    color: #4e733c;          /* Твій зелений колір */
+    font-family: 'Lexend', sans-serif; /* Lexend краще читається для тексту */
+    font-size: 18px;         /* Твій розмір */
+    line-height: 1.6;        /* Міжрядковий інтервал для зручності читання */
     margin-bottom: 15px;
-    font-weight: 500;        /* Трохи жирніший текст, щоб краще читався на блакитному */
 }
 
-/* АДАПТИВНІСТЬ ДЛЯ ТЕЛЕФОНІВ */
+/* АДАПТИВНІСТЬ (Для телефонів) */
 @media (max-width: 768px) {
     .text-page-container {
-        padding: 10px 20px; /* Додаємо відступи збоку, щоб текст не прилипав до екрана */
-        width: 100%;
+        padding: 0 15px;     /* Трохи менші відступи з боків */
+        margin: 20px auto;
     }
     
     .text-page-container h1 {
-        font-size: 2rem;
+        font-size: 28px;     /* На телефоні 30 може бути забагато, трохи зменшив */
     }
 }
 
